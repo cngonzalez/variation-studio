@@ -1,0 +1,11 @@
+*[_type == 'hero'][0]{
+  "variant": variations[brand->{name}.name == $brand][0],
+  "fallback": @
+}
+
+*[_type == 'hero'][0]{
+  'cta': coalesce(variations[brand->{name}.name == $brand][0].cta, cta),
+  'title': coalesce(variations[brand->{name}.name == $brand][0].title, title),
+  'image': coalesce(variations[brand->{name}.name == $brand][0].image, image)
+}
+
